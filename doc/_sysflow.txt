@@ -1,0 +1,56 @@
+1. login
+  - room_id
+  - player name: unique in the room
+  - button: enter the room
+  - may have multiple rooms
+
+2. when a user enters a room and there are enough players,
+    randomly assign character to each player
+  - character_type:
+      1=awaken
+      2=awaken hostage
+      3=ordinary hostage
+      4=stockholm patient
+      5=kinapper
+
+3. Day
+  - DQ a player
+    > select Voting manager (randomly chosen for the first time)
+      withdraw its voting right
+      character_type: [2,3,5,1,4]
+      player_id: [40,12,123,8,9]
+    > every player in the room will receive a command to be notifed about
+      who the voting manager is.
+  - VOTE: show the day options for different players (for, against, kill, sacrifice)
+    > for & against X2 are limited
+
+  - randomly assign which side (kidnapper/awaken) the ordinary hostage takes
+
+  - button: select the option
+
+4. Day results (when all the players have selected the options)
+  - free badges (end game when == 3)
+  - suppression badges (end game when == 3)
+
+  (audio presentation)
+
+5. Night
+  - show the night options for different players (wake, suppress, blame)
+    > the x2 options are limited
+  - select the receiving player for each option
+  - button: finish this phrase
+
+6. Night results (when all players have selected the options)
+  - calculate net waken/net suppressed
+  - new formation?
+    > awaken/ordinary hostage/kidnapper
+    > which side is it now?
+  - observed history
+    > Day N:
+      - Disqualified voting players
+      - my actions (for/against/special functions)
+      - Voting results
+    > Night N:
+      - my actions to selected players (waken/suppress/public insult)
+      - observed actions
+  - start another Day
